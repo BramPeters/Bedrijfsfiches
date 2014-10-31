@@ -9,16 +9,16 @@
             </header>
             <div class="snippet">
                 <p>{{ bedrijf.name(500) }}</p>
-                <p class="continue"><a href="{{ path('BedrijvenFicheBundle_bedrijf_show', { 'id': bedrijf.id }) }}">Continue reading...</a></p>
+                <p class="continue"><a href="{{ path('BedrijvenFicheBundle_bedrijf_show', { 'id': bedrijf.id }) }}">Meer info...</a></p>
             </div>
 
             <footer class="meta">
                 <p>Contactpersonen: -</p>
-                <p>Posted at {{ bedrijf.created|date('h:iA') }}</p>
+                <p>Aangemaakt op: {{ bedrijf.created|date('h:iA') }}</p>
                 <p>Tags: <span class="highlight">{{ bedrijf.tags }}</span></p>
             </footer>
         </article>
     {% else %}
-        <p>There are no entries</p>
+        <p>Er zijn nog geen bedrijven aangemaakt.</p>
     {% endfor %}
 {% endblock %}

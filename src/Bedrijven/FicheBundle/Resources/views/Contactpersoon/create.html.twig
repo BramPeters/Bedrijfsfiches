@@ -1,8 +1,8 @@
 {% extends 'BedrijvenFicheBundle::layout.html.twig' %}
 
-{% block title %}Add Contactpersoon{% endblock%}
+{% block title %}Contactpersoon toevoegen{% endblock%}
 
 {% block body %}
-    <h1>Add Contact for bedrijf "{{ contactpersoon.bedrijf.title }}"</h1>
+    <h1>Contactpersoon toevoegen voor bedrijf: "{{ contactpersoon.bedrijf.title }}"</h1>
     {% include 'BedrijvenFicheBundle:Contactpersoon:form.html.twig' with { 'form': form } %}
 {% endblock %}

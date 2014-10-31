@@ -1,0 +1,8 @@
+{% extends 'BedrijvenFicheBundle::layout.html.twig' %}
+
+{% block title %}Bedrijf toevoegen{% endblock%}
+
+{% block body %}
+    <h1>Bedrijf toevoegen</h1>
+    {% include 'BedrijvenFicheBundle:Bedrijf:form.html.twig' with { 'form': form } %}
+{% endblock %}
