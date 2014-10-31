@@ -1,0 +1,4 @@
+bedrijven_fiche:
+    resource: "@BedrijvenFicheBundle/Resources/config/routing.yml"
+    prefix:   /
+

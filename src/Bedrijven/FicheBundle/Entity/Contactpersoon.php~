@@ -1,0 +1,62 @@
+<?php
+
+namespace Bedrijven\FicheBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity(repositoryClass="Bedrijven\FicheBundle\Entity\Repository\ContactpersoonRepository")
+ * @ORM\Table(name="contactpersonen")
+ * @ORM\HasLifecycleCallbacks
+ */
+class Contactpersoon
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $user;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $telnumber;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Bedrijf", inversedBy="contactpersonen")
+     * @ORM\JoinColumn(name="bedrijf_id", referencedColumnName="id")
+     */
+    protected $bedrijf;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $created;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $updated;
+
+    public function __construct()
+    {
+        $this->setCreated(new \DateTime());
+        $this->setUpdated(new \DateTime());
+
+        $this->setApproved(true);
+    }
+
+    /**
+     * @ORM\preUpdate
+     */
+    public function setUpdatedValue()
+    {
+       $this->setUpdated(new \DateTime());
+    }
+}

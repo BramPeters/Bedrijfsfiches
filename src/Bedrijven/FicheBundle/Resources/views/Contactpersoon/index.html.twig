@@ -1,0 +1,11 @@
+
+{% for contactpersoon in contactpersonen %}
+    <article class="contactpersoon {{ cycle(['odd', 'even'], loop.index0) }}" id="contactpersoon-{{ contactpersoon.id }}">
+        <header>
+            <p><span class="highlight">{{ contactpersoon.user }}</span> <time datetime="{{ contactpersoon.created|date('c') }}">{{ contactpersoon.created|date('l, F j, Y') }}</time></p>
+        </header>
+        <p>{{ contactpersoon.telnumber }}</p>
+    </article>
+{% else %}
+    <p>There are no contacts for this company.</p>
+{% endfor %}

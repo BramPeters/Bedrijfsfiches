@@ -1,0 +1,24 @@
+{% extends 'BedrijvenFicheBundle::layout.html.twig' %}
+
+{% block title %}{{ bedrijf.name }}{% endblock %}
+
+{% block body %}
+<article class="bedrijf">
+    <header>
+        <div class="date"><time datetime="{{ bedrijf.created|date('c') }}">{{ bedrijf.created|date('l, F j, Y') }}</time></div>
+        <h2>{{ bedrijf.name }}</h2>
+    </header>
+    <div>
+        <p>{{ bedrijf.adress }}</p>
+        <section class="contactpersonen" id="contactpersonen">
+            <section class="previous-contactpersonen">
+                <h3>Contactpersonen</h3>
+            {% include 'BedrijvenFicheBundle:Contactpersoon:index.html.twig' with { 'contactpersonen': contactpersonen } %}
+            
+            </section>
+            <h3>Add Contact</h3>
+        {% render controller('BedrijvenFicheBundle:Contactpersoon:new', { 'bedrijf_id': bedrijf.id }) %}
+        </section>
+    </div>
+</article>
+{% endblock %}

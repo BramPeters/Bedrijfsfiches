@@ -1,0 +1,24 @@
+{% extends 'BedrijvenFicheBundle::layout.html.twig' %}
+
+{% block body %}
+    {% for bedrijf in bedrijven %}
+        <article class="bedrijf">
+            <div class="date"><time datetime="{{ bedrijf.created|date('c') }}">{{ bedrijf.created|date('l, F j, Y') }}</time></div>
+            <header>
+                <h2><a href="{{ path('BedrijvenFicheBundle_bedrijf_show', { 'id': bedrijf.id }) }}">{{ bedrijf.name }}</a></h2>
+            </header>
+            <div class="snippet">
+                <p>{{ bedrijf.name(500) }}</p>
+                <p class="continue"><a href="{{ path('BedrijvenFicheBundle_bedrijf_show', { 'id': bedrijf.id }) }}">Continue reading...</a></p>
+            </div>
+
+            <footer class="meta">
+                <p>Contactpersonen: -</p>
+                <p>Posted at {{ bedrijf.created|date('h:iA') }}</p>
+                <p>Tags: <span class="highlight">{{ bedrijf.tags }}</span></p>
+            </footer>
+        </article>
+    {% else %}
+        <p>There are no entries</p>
+    {% endfor %}
+{% endblock %}

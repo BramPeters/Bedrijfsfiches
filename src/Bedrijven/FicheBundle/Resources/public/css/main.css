@@ -1,0 +1,26 @@
+.bedrijven-notice { text-align: center; padding: 10px; background: #DFF2BF; border: 1px solid; color: #4F8A10; margin-bottom: 10px; }
+form.bedrijven { font-size: 16px; }
+form.bedrijven div { clear: left; margin-bottom: 10px; }
+form.bedrijven label { float: left; margin-right: 10px; text-align: right; width: 100px; font-weight: bold; vertical-align: top; padding-top: 10px; }
+form.bedrijven input[type="text"],
+form.bedrijven input[type="email"]
+    { width: 500px; line-height: 26px; font-size: 20px; min-height: 26px; }
+form.bedrijven textarea { width: 500px; height: 150px; line-height: 26px; font-size: 20px; }
+form.bedrijven input[type="submit"] { margin-left: 110px; width: 508px; line-height: 26px; font-size: 20px; min-height: 26px; }
+form.bedrijven ul li { color: #ff0000; margin-bottom: 5px; }
+
+.date { margin-bottom: 20px; border-bottom: 1px solid #ccc; font-size: 24px; color: #666; line-height: 30px }
+.bedrijf { margin-bottom: 20px; }
+.bedrijf img { width: 190px; float: left; padding: 5px; border: 1px solid #ccc; margin: 0 10px 10px 0; }
+.bedrijf .meta { clear: left; margin-bottom: 20px; }
+.bedrijf .snippet p.continue { margin-bottom: 0; text-align: right; }
+.bedrijf .meta { font-style: italic; font-size: 12px; color: #666; }
+.bedrijf .meta p { margin-bottom: 5px; line-height: 1.2em; }
+.bedrijf img.large { width: 300px; min-height: 165px; }
+
+.contactpersonen { clear: both; }
+.contactpersonen .odd { background: #eee; }
+.contactpersonen .contactpersoon { padding: 20px; }
+.contactpersonen .contactpersoon p { margin-bottom: 0; }
+.contactpersonen h3 { background: #eee; padding: 10px; font-size: 20px; margin-bottom: 20px; clear: both; }
+.contactpersonen .previous-contactpersonen { margin-bottom: 20px; }

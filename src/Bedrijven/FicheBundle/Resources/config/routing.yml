@@ -1,0 +1,38 @@
+BedrijvenFicheBundle_homepage:
+    pattern:  /
+    defaults: { _controller: BedrijvenFicheBundle:Page:index }
+    requirements:
+        _method:  GET
+        
+BedrijvenFicheBundle_about:
+    pattern:  /about
+    defaults: { _controller: BedrijvenFicheBundle:Page:about }
+    requirements:
+        _method:  GET      
+
+BedrijvenFicheBundle_contact:
+    pattern:  /contact
+    defaults: { _controller: BedrijvenFicheBundle:Page:contact }
+    requirements:
+        _method:  GET|POST
+        
+BedrijvenFicheBundle_bedrijf_show:
+    pattern:  /{id}
+    defaults: { _controller: BedrijvenFicheBundle:Bedrijf:show }
+    requirements:
+        _method:  GET
+        id: \d+
+
+BedrijvenFicheBundle_bedrijf_create:
+    pattern:  /createbedrijf
+    defaults: { _controller: BedrijvenFicheBundle:Bedrijf:create }
+    requirements:
+        _method:  GET|POST
+        id: \d+        
+        
+BedrijvenFicheBundle_contactpersoon_create:
+    pattern:  /contactpersoon/{bedrijf_id}
+    defaults: { _controller: BedrijvenFicheBundle:Contactpersoon:create }
+    requirements:
+        _method:  POST
+        blog_id: \d+        

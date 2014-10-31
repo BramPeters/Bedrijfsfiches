@@ -1,0 +1,6 @@
+<form action="{{ path('BedrijvenFicheBundle_contactpersoon_create', { 'bedrijf_id' : contactpersoon.bedrijf.id } ) }}" method="post" {{ form_enctype(form) }} class="bedrijven">
+    {{ form_widget(form) }}
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+</form>
